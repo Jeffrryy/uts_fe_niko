@@ -29,8 +29,8 @@ Instalasi dan Penggunaan
 Untuk menginstalasi dan menggunakan aplikasi ini, silakan ikuti langkah-langkah berikut:
 
 1. Pastikan Anda memiliki Node.js dan npm terinstalasi di komputer Anda.
-2. Clone repository ini menggunakan perintah `git clone https://github.com/Jeffrryy/aplikasipemesananmakananreact.git`.
-3. Masuk ke direktori proyek menggunakan perintah `cd aplikasipemesananmakananreact`.
+2. Clone repository ini menggunakan perintah `git clone https://github.com/Jeffrryy/uts_fe_niko.git`.
+3. Masuk ke direktori proyek menggunakan perintah `cd uts_fe_niko`.
 4. Jalankan perintah `npm install` untuk menginstalasi semua dependensi yang diperlukan.
 5. Jalankan perintah `npm start` untuk menjalankan aplikasi dalam mode pengembangan.
 6. Buka browser Anda dan akses aplikasi di `http://localhost:3000`.
