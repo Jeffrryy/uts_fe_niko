@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/uts_fe_niko/static/css/main.081fd145.css",
-    "main.js": "/uts_fe_niko/static/js/main.d6fe9fd7.js",
-    "static/media/2.png": "/uts_fe_niko/static/media/2.5f080d9e47bf46ca3fce.png",
-    "static/media/3.png": "/uts_fe_niko/static/media/3.c7785c796d0b2bf5aa2b.png",
-    "static/media/4.png": "/uts_fe_niko/static/media/4.dce93278370eb9a94e56.png",
-    "static/media/1.png": "/uts_fe_niko/static/media/1.87f6c2f48f7e15ed845b.png",
-    "static/media/8.webp": "/uts_fe_niko/static/media/8.8bd0ab9ccc0cf9fb335d.webp",
-    "static/media/5.png": "/uts_fe_niko/static/media/5.a13c8fc38072a14d6633.png",
-    "static/media/Piatos.jpg": "/uts_fe_niko/static/media/Piatos.060b3bb307b30df7b2b1.jpg",
-    "static/media/Frenchries.jpg": "/uts_fe_niko/static/media/Frenchries.f9ed4770b7a2a8287007.jpg",
-    "static/media/Lays.jpg": "/uts_fe_niko/static/media/Lays.99f597f0903c1e484514.jpg",
-    "static/media/Pringlesjpg.jpg": "/uts_fe_niko/static/media/Pringlesjpg.092c15fa4a4823902c38.jpg",
-    "static/media/6.webp": "/uts_fe_niko/static/media/6.5828a0fe3c77468b8726.webp",
-    "static/media/Kusuka.jpg": "/uts_fe_niko/static/media/Kusuka.2885b5297cf074781a1d.jpg",
-    "static/media/Tictacjpg.jpg": "/uts_fe_niko/static/media/Tictacjpg.6c8c2fd18c5bff58dba1.jpg",
-    "static/media/Qtela.jpg": "/uts_fe_niko/static/media/Qtela.cf3ea7e55a09b50ff7a7.jpg",
-    "static/media/potatoBee.jpg": "/uts_fe_niko/static/media/potatoBee.8e8f025569365a970406.jpg",
-    "static/media/images.jpeg": "/uts_fe_niko/static/media/images.427c5e0fbd04d31fdb74.jpeg",
-    "static/media/7.webp": "/uts_fe_niko/static/media/7.59c9a0eba54726d9fc95.webp",
-    "index.html": "/uts_fe_niko/index.html",
-    "main.081fd145.css.map": "/uts_fe_niko/static/css/main.081fd145.css.map",
-    "main.d6fe9fd7.js.map": "/uts_fe_niko/static/js/main.d6fe9fd7.js.map"
+    "main.css": "/static/css/main.081fd145.css",
+    "main.js": "/static/js/main.c378b03f.js",
+    "static/media/2.png": "/static/media/2.5f080d9e47bf46ca3fce.png",
+    "static/media/3.png": "/static/media/3.c7785c796d0b2bf5aa2b.png",
+    "static/media/4.png": "/static/media/4.dce93278370eb9a94e56.png",
+    "static/media/1.png": "/static/media/1.87f6c2f48f7e15ed845b.png",
+    "static/media/8.webp": "/static/media/8.8bd0ab9ccc0cf9fb335d.webp",
+    "static/media/5.png": "/static/media/5.a13c8fc38072a14d6633.png",
+    "static/media/Piatos.jpg": "/static/media/Piatos.060b3bb307b30df7b2b1.jpg",
+    "static/media/Frenchries.jpg": "/static/media/Frenchries.f9ed4770b7a2a8287007.jpg",
+    "static/media/Lays.jpg": "/static/media/Lays.99f597f0903c1e484514.jpg",
+    "static/media/Pringlesjpg.jpg": "/static/media/Pringlesjpg.092c15fa4a4823902c38.jpg",
+    "static/media/6.webp": "/static/media/6.5828a0fe3c77468b8726.webp",
+    "static/media/Kusuka.jpg": "/static/media/Kusuka.2885b5297cf074781a1d.jpg",
+    "static/media/Tictacjpg.jpg": "/static/media/Tictacjpg.6c8c2fd18c5bff58dba1.jpg",
+    "static/media/Qtela.jpg": "/static/media/Qtela.cf3ea7e55a09b50ff7a7.jpg",
+    "static/media/potatoBee.jpg": "/static/media/potatoBee.8e8f025569365a970406.jpg",
+    "static/media/images.jpeg": "/static/media/images.427c5e0fbd04d31fdb74.jpeg",
+    "static/media/7.webp": "/static/media/7.59c9a0eba54726d9fc95.webp",
+    "index.html": "/index.html",
+    "main.081fd145.css.map": "/static/css/main.081fd145.css.map",
+    "main.c378b03f.js.map": "/static/js/main.c378b03f.js.map"
   },
   "entrypoints": [
     "static/css/main.081fd145.css",
-    "static/js/main.d6fe9fd7.js"
+    "static/js/main.c378b03f.js"
   ]
 }
