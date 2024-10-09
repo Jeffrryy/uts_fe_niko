@@ -1,26 +1,17 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import './Shop.css'
+
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } from '@mui/material';
 
-const Shop = () => {
-  const [cart, setCart] = useState([]);
-  const [fetchedProducts, setFetchedProducts] = useState([]);
+const Order = () => {
+  const [fetchedOrders, setFetchedOrders] = useState([]);
   const [open, setOpen] = useState(false);
-  const [newProduct, setNewProduct] = useState({ itemName: '', price: '' });
+  const [newOrder, setNewOrder] = useState({ orderDate: '', status: '' });
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
-
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
-
-  const removeFromCart = (productIndex) => {
-    setCart(cart.filter((_, index) => index !== productIndex));
-  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -32,26 +23,26 @@ const Shop = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setNewProduct({ ...newProduct, [name]: value });
+    setNewOrder({ ...newOrder, [name]: value });
   };
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/food/create', newProduct);
-      setFetchedProducts([...fetchedProducts, response.data]);
+      const response = await axios.post('http://localhost:3000/order/create', newOrder);
+      setFetchedOrders([...fetchedOrders, response.data]);
       handleClose();
     } catch (error) {
-      console.error('Error adding product:', error);
+      console.error('Error adding order:', error);
     }
   };
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/food/delete/${id}`);
-      setFetchedProducts(fetchedProducts.filter(product => product.id !== id));
+      await axios.delete(`http://localhost:3000/order/delete/${id}`);
+      setFetchedOrders(fetchedOrders.filter(order => order.id !== id));
       setConfirmOpen(false);
     } catch (error) {
-      console.error('Error deleting product:', error);
+      console.error('Error deleting order:', error);
     }
   };
 
@@ -68,9 +59,9 @@ const Shop = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/food/findall');
+        const response = await axios.get('http://localhost:3000/order/findall');
         console.log(response.data);
-        setFetchedProducts(response.data);
+        setFetchedOrders(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -85,12 +76,12 @@ const Shop = () => {
         <h1 className='text-2xl font-bold text-warna-pecel flex justify-center'>PECEL LELE 21</h1>
       </div>
       <div className=" flex justify-between mb-6">
-        <h1 className="text-2xl font-bold text-warna-pecel flex justify-center">List Makanan</h1>
+        <h1 className="text-2xl font-bold text-warna-pecel flex justify-center">List Order</h1>
         <button
           className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 ml-4 justify-center"
           onClick={handleClickOpen}
         > 
-         Tambah Makanan Baru <AddIcon />
+         Tambah Order Baru <AddIcon />
         </button>
       </div>
 
@@ -99,24 +90,24 @@ const Shop = () => {
           <thead className="bg-gray-200 backdrop-blur-sm bg-opacity-50">
             <tr>
               <th className="px-4 py-2 border">No</th>
-              <th className="px-4 py-2 border">Nama</th>
-              <th className="px-4 py-2 border">Harga</th>
+              <th className="px-4 py-2 border">Tanggal Order</th>
+              <th className="px-4 py-2 border">Status</th>
               <th className="px-4 py-2 border">Aksi</th>
             </tr>
           </thead>
           <tbody>
-            {[...fetchedProducts].map((transaksiItem, index) => (
+            {[...fetchedOrders].map((orderItem, index) => (
               <tr
-                key={transaksiItem.id}
+                key={orderItem.id}
                 className="backdrop-blur-sm bg-opacity-50  hover:bg-opacity-100"
               >
                 <td className="px-4 py-2 border text-center">{index + 1}</td>
-                <td className="px-4 py-2 border">{transaksiItem.itemName}</td>
-                <td className="px-4 py-2 border">{transaksiItem.price}</td>
+                <td className="px-4 py-2 border">{orderItem.orderDate}</td>
+                <td className="px-4 py-2 border">{orderItem.status}</td>
                 <td className="px-4 py-2 border text-center">
                   <button
                     className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
-                    onClick={() => handleConfirmOpen(transaksiItem.id)}
+                    onClick={() => handleConfirmOpen(orderItem.id)}
                   >
                      <RemoveIcon />
                   </button>
@@ -128,26 +119,25 @@ const Shop = () => {
       </div>
 
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Tambah Makanan Baru</DialogTitle>
+        <DialogTitle>Tambah Order Baru</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
             margin="dense"
-            name="itemName"
-            label="Nama Produk"
-            type="text"
+            name="orderDate"
+            label="Tanggal Order"
+            type="date"
             fullWidth
-            value={newProduct.itemName}
+            value={newOrder.orderDate}
             onChange={handleChange}
           />
           <TextField
             margin="dense"
-            name="price"
-            label="Harga"
-            // type="number"
+            name="status"
+            label="Status"
             type="text"
             fullWidth
-            value={newProduct.price}
+            value={newOrder.status}
             onChange={handleChange}
           />
         </DialogContent>
@@ -175,11 +165,11 @@ const Shop = () => {
                 </div>
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                    Konfirmasi Hapus Makanan
+                    Konfirmasi Hapus Order
                   </h3>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      Apakah Anda yakin ingin menghapus makanan ini? Tindakan ini tidak dapat dibatalkan.
+                      Apakah Anda yakin ingin menghapus order ini? Tindakan ini tidak dapat dibatalkan.
                     </p>
                   </div>
                 </div>
@@ -208,4 +198,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Order;
