@@ -28,7 +28,7 @@ const Navbar = () => {
             </ListItemIcon>
             <ListItemText primary="Order" />
           </ListItem>
-          <ListItem button component={Link} to="/" onClick={toggleDrawer}>
+          <ListItem button component={Link} to="/shop" onClick={toggleDrawer}>
             <ListItemIcon className="text-white">
               <RestaurantMenu />
             </ListItemIcon>
